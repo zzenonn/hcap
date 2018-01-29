@@ -1,6 +1,6 @@
-*/targeti/*
+*/target/*
 .classpath
-*/.project/*
+.project
 */.settings/*
 # Compiled class file
 *.class
