@@ -5,11 +5,9 @@ import io.kaitai.struct.KaitaiStruct;
 import io.kaitai.struct.KaitaiStream;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.nio.charset.Charset;
 
 /**
  * @author zenon
@@ -224,6 +222,10 @@ public class Ipv4Packet extends KaitaiStruct {
 		} catch (Exception e1) {
 			
 		}
+		/**
+		 * Only the protocols in listed in the witch statement are supported. Developers may
+		 * opt to add support for other protocols depending on the needs of their project.
+		 */
 		switch (protocol()) {
 		case TCP: {
 			this._raw_body = this._io.readBytesFull();
@@ -265,12 +267,6 @@ public class Ipv4Packet extends KaitaiStruct {
 			}
 			break;
 		}
-		//        case IPV6: {
-		//            this._raw_body = this._io.readBytesFull();
-		//            KaitaiStream _io__raw_body = new KaitaiStream(_raw_body);
-		//            this.body = new Ipv6Packet(_io__raw_body);
-		//            break;
-		//        }
 		default: {
 			this.body = this._io.readBytesFull();
 			break;

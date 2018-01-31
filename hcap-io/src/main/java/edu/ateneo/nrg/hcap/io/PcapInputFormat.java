@@ -22,6 +22,12 @@ import java.io.DataInputStream;
 
 import org.apache.hadoop.mapred.RecordReader;
 
+/**
+ * 
+ * @author zenon
+ * This InputFormat uses the old mapred API. This is because Hive does not support InputFormats
+ * that use the new mapreduce API. I will soon release another branch that uses the new API.
+ */
 
 public class PcapInputFormat extends FileInputFormat<LongWritable, ObjectWritable> {
 	public static final Log LOG = LogFactory.getLog(PcapInputFormat.class);

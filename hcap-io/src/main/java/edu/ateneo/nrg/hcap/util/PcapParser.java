@@ -51,6 +51,12 @@ public class PcapParser {
 
 	}
 	
+	/**
+	 * This returns the next packet so long as it is parsable.
+	 * When a packet is not parsable, getNext() returns a null.
+	 * @return
+	 * @throws IOException
+	 */
 	public Flow next() throws IOException {
 		Flow flow = getNext();
 		while(flow == null)
@@ -97,6 +103,11 @@ public class PcapParser {
 		this.stream.readFully(rawPacketData);
 		flow.put(Flow.TIMESTAMP, packetHdr.tsSec());
 		flow.put(Flow.uTIMESTAMP, packetHdr.tsUsec());
+		/**
+		 * So far, only two EtherTypes are supported: RAW and Ethernet.
+		 * You may specify other types here so long as you properly 
+		 * construct parsers for it.
+		 */
 		switch(hdr.network()) {
 		case ETHERNET: {
 			EthernetFrame frame = null;

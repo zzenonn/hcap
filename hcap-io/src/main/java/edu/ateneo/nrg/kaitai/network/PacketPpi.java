@@ -1,15 +1,12 @@
 package edu.ateneo.nrg.kaitai.network;
-// This is a generated file! Please edit source .ksy file and use kaitai-struct-compiler to rebuild
 
 import io.kaitai.struct.KaitaiStruct;
 import io.kaitai.struct.KaitaiStream;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.nio.charset.Charset;
 
 
 /**
@@ -20,6 +17,9 @@ import java.nio.charset.Charset;
  * 
  * Sample capture: https://wiki.wireshark.org/SampleCaptures?action=AttachFile&do=get&target=Http.cap  
  * @see <a href="https://www.cacetech.com/documents/PPI_Header_format_1.0.1.pdf">PPI header format spec, section 3</a>
+ * 
+ * Note: Currently, this is not yet incorporated in the hcap framework. This may be incorporated in the future when
+ * sufficient samples are available for testing.
  */
 public class PacketPpi extends KaitaiStruct {
     public static PacketPpi fromFile(String fileName) throws IOException {

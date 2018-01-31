@@ -4,11 +4,8 @@ import io.kaitai.struct.KaitaiStruct;
 import io.kaitai.struct.KaitaiStream;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.nio.charset.Charset;
 
 /**
  * @author zenon
@@ -215,6 +212,10 @@ public class Ipv6Packet extends KaitaiStruct {
         this.hopLimit = this._io.readU1();
         this.srcIpv6Addr = this._io.readBytes(16);
         this.dstIpv6Addr = this._io.readBytes(16);
+		/**
+		 * Only the protocols in listed in the witch statement are supported. Developers may
+		 * opt to add support for other protocols depending on the needs of their project.
+		 */
         switch (nextHeaderType()) {
         case TCP: {
         	if(!this._io.isEof())	
@@ -260,11 +261,9 @@ public class Ipv6Packet extends KaitaiStruct {
         	}
             break;
         }
-//        case IPV4: {
-//        	if(!this._io.isEof())
-//        		this.nextHeader = new Ipv4Packet(this._io);
-//            break;
-//        }
+		default:
+			this.nextHeader = null;
+			break;
         }
         this.rest = this._io.readBytesFull();
     }

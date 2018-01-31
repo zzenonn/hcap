@@ -1,15 +1,9 @@
 package edu.ateneo.nrg.kaitai.network;
-// This is a generated file! Please edit source .ksy file and use kaitai-struct-compiler to rebuild
 
 import io.kaitai.struct.KaitaiStruct;
 import io.kaitai.struct.KaitaiStream;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.nio.charset.Charset;
 
 
 /**
@@ -22,6 +16,9 @@ import java.nio.charset.Charset;
  * refer to @see <a href="http://kaitai.io/</a> for more
  * details on the kaitai struct library and how it can be 
  * used to parse binary files.
+ * 
+ * This class simple reads the header of each packet as
+ * specified by the PCAP standard.
  * 
  */
 public class Packet extends KaitaiStruct {

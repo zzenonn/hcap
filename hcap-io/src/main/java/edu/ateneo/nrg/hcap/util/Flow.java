@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Flow extends HashMap<String, Object>{
 	/**
-	 * 
+	 * A HashMap is used to store the flow data to make deserialization easier
 	 */
 	private static final long serialVersionUID = 1541687412830666926L;
 	public static final String TIMESTAMP 	= "timestamp";
