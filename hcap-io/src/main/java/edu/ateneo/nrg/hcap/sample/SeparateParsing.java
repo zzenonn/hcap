@@ -12,7 +12,7 @@ public class SeparateParsing {
 
 	public static void main(String[] args) throws IOException {
 	long startTime = System.nanoTime();
-	InputStream in = new FileInputStream("src/main/resources/testCapture.pcap");
+	InputStream in = new FileInputStream("<path/to/pcap/file>");
 	PcapParser parser = new PcapParser(new DataInputStream(in));
 	while(parser.hasNext()) {
 		Flow flow = parser.next();
