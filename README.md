@@ -1,7 +1,7 @@
 # Hcap Parser
 
 ## Overview
-HCAP is a PCAP parser for Hadoop. It uses the [Kaitai Struct](http://kaitai.io/) library to create the binary parsers for the packets, and it is also based on RIPE's [hadoop-pcap](https://github.com/RIPE-NCC/hadoop-pcap) library.
+Hcap is a PCAP parser for Hadoop. It uses the [Kaitai Struct](http://kaitai.io/) library to create the binary parsers for the packets, and it is also based on RIPE's [hadoop-pcap](https://github.com/RIPE-NCC/hadoop-pcap) library.
 
 Although it supports several fields, only flow related data is explicitly parsed:
 
