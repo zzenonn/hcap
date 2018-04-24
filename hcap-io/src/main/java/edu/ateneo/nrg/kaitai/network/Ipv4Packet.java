@@ -223,8 +223,10 @@ public class Ipv4Packet extends KaitaiStruct {
 			
 		}
 		/**
-		 * Only the protocols in listed in the witch statement are supported. Developers may
+		 * Only the protocols in listed in the switch statement are supported. Developers may
 		 * opt to add support for other protocols depending on the needs of their project.
+		 * The try-catch statements make this more robust when dealing with broken packets, and
+		 * the code structure makes it easier to identify where to add these statements.
 		 */
 		switch (protocol()) {
 		case TCP: {
