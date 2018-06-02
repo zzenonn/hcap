@@ -30,3 +30,17 @@ Simple run `mvn clean install` in the project root directory.
 ## Usage
 It may be used either on its own as an InputFormat, or on Hive to analyze the PCAP files in tabular format.
 
+## Additional Tips
+    `bash
+#!/bin/bash
+
+pcap_files='*.pcap'
+
+tcpdump_cmd='tcpdump'
+mkdir splitfiles
+
+for file in $pcap_files
+do
+	mkdir splitfiles/$file
+	$tcpdump_cmd -r $file -w splitfiles/$file/$file.split -C 127
+done      
